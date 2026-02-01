@@ -1,22 +1,46 @@
-let button = document.getElementById('button')
-let h1 = document.getElementById('h1')
+let btn = document.getElementById('btn')
+let btn2 = document.getElementById('btn2')
+let btn3 = document.getElementById('btn3')
+let p = document.getElementById('p')
+let p2 = document.getElementById('p2')
+let input = document.getElementById('input')
 
-let isHello = true   // <-- THIS is the state
+let count = 0
 
 function changeText() {
-  if (isHello) {
-    h1.textContent = 'HELLO AGAIN'
-    h1.style.color = 'red'
-    isHello = false
-  } else {
-    h1.textContent = 'Hello World'
-    h1.style.color = 'blue'
-    isHello = true
+  let value = Number(input.value)   // 👈 convert HERE, every click
+
+  count = count + value             // 👈 accumulate, don’t replace
+
+  if (count > 10) {
+    count = 10
   }
+
+  p.textContent = count
+  p2.textContent = value
 }
 
-button.addEventListener('click', changeText)
+btn.addEventListener('click', changeText)
 
+function changeText2() {
+  let value = Number(input.value)
 
+  count = count - value
 
-sdfsdfsdgsfgfdgdrger
+  if (count < 0) {
+    count = 0
+  }
+
+  p.textContent = count
+  p2.textContent = value
+}
+
+btn2.addEventListener('click', changeText2)
+
+function restart() {
+  count = 0
+  p.textContent = count
+  p2.textContent = ''
+}
+
+btn3.addEventListener('click', restart)
