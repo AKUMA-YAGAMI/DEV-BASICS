@@ -6,46 +6,38 @@ let p1 = document.getElementById('p1')
 
 let count = 0
 
-function add(){
-let value = Number(input.value)
+function add() {
+  let value = Number(input.value)
 
-p1.innerHTML =  value + count
-count = value
-if(value > 20){
-   p1.innerHTML = 20 
+  count = count + value
+
+  if (count > 20) {
+    count = 20
+  }
+
+  p1.textContent = count
 }
-    
-}
-
-
 
 button1.addEventListener('click', add)
 
+function sub() {
+  let value = Number(input.value)
 
-function sub(){
-let value = Number(input.value)
+  count = count - value
 
-p1.innerHTML =  count - value
-count = value
-if(value < 0){
-   p1.innerHTML = 0 
-}
+  if (count < 0) {
+    count = 0
+  }
 
+  p1.textContent = count
 }
 
 button2.addEventListener('click', sub)
 
-
-
-
-function reset(){
-     p1.innerHTML = 0 
+function reset() {
+  count = 0
+  p1.textContent = count
 }
 
-
 button3.addEventListener('click', reset)
-
-
-
-
 
