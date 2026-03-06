@@ -28,3 +28,52 @@ function array() {
 
 button.addEventListener("click", array);    */
 
+
+/*
+
+////////////////map()/////////////////////////////
+
+const group = ['Master','Padawan', 'soldier'];
+
+let newMap = group.map(arrayV => 'Hello ' + arrayV);
+
+console.log(newMap)
+
+
+*/
+
+
+/*
+
+/////////////////////// filter() /////////////////////
+
+const products = [{name:'onion', price:22.50 }, {name:'cabage', price:12.50 }, {name:'carrot', price:32.50 }]
+
+let newFilter = products.filter(arrayV => arrayV.price > 20)
+
+console.log(newFilter)
+
+*/
+
+
+/*
+//////////////////// find() //////////////////
+
+
+const products = [{name:'onion', price:22.50 }, {name:'cabage', price:12.50 }, {name:'carrot', price:32.50 }]
+
+let newFind = products.find(arrayV => arrayV.name === 'onion')
+
+console.log(newFind)
+
+*/
+
+////////////////// reduce()  /////////////////////////
+
+const products = [{name:'onion', price:22.50 }, {name:'cabage', price:12.50 }, {name:'carrot', price:32.50 }]
+
+let newReduce = products.reduce((accumulator, arrayV) => {
+  return accumulator + arrayV.price
+}, 0)
+
+console.log(newReduce)
