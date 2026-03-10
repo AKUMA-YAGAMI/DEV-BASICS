@@ -71,6 +71,9 @@ console.log("Button found:", button)
 
 */
 
+/*
+
+
 let button = document.getElementById('button')
 let p = document.getElementById('p')
 
@@ -96,6 +99,48 @@ catch(error){
 }
 
 button.addEventListener('click', dogsBreed)
+
+
+
+*/
+
+let input = document.getElementById('input')
+let button = document.getElementById('button')
+let p = document.getElementById('p')
+
+
+async function noHands(){
+
+try{
+let countryName = input.value.toLowerCase()
+let response1 = await fetch(`https://restcountries.com/v3.1/name/${countryName}`)
+
+if(!response1.ok){
+    throw new Error('look master no hands')}
+
+    let response2 = await response1.json()
+
+    console.log(response2)
+
+    
+
+p.innerHTML = `THIS IS YOUR COUNTRY <br> ${response2[0].name.common} <br> Capital ${response2[0].capital[0] } <br> Area: ${response2[0].area }km2  <br> Borders : ${response2[0].borders} `
+
+    
+    
+} catch(error){
+    console.log('error', error)
+}
+
+}
+
+button.addEventListener('click', noHands)
+
+
+
+
+
+
 
 
 
