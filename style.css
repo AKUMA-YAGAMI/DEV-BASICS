@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: white;
     margin: 0;
     padding: 0;
     min-height: 100vh;
@@ -42,12 +42,66 @@ h1 {
 
 button {
     padding: 12px 20px;
-    background: #4CAF50;
-    color: white;
-    border: none;
+    background: white;
+    color: black;
+    border: 1px solid black;
     border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
+
+/* Pokédex styles */
+.pokedex {
+    width: 400px;
+    height: 300px;
+    background: red;
+    border: 5px solid black;
+    position: relative;
+}
+
+.screen {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: 300px;
+    height: 200px;
+    background: white;
+    border: 2px solid black;
+}
+
+#pokescreen {
+    padding: 10px;
+    color: black;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    text-align: center;
+}
+
+#pokescreen p {
+    margin: 0;
+}
+
+input {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    padding: 5px;
+    border: 2px solid black;
+}
+
+button {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    padding: 5px;
+    background: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
     transition: background 0.3s;
 }
 
