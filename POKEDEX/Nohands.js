@@ -16,7 +16,7 @@ if(!response1.ok){throw new Error('this shit just crash')}
 
 const data = await response1.json();
 console.log(data);
-
+ localStorage.setItem('lastPokemon', toLowerCaseName);
 div.innerHTML = `NAME :${data.name}  <br> ORDER :${data.order} <br> TYPE :${data.types[0].type.name} <br> FAVORITE ATTACK :${data.abilities[0].ability.name}<br> PICTURE: <img src="${data.sprites.front_default}" alt="${data.name}">`;
 }
 catch(error){
@@ -26,6 +26,14 @@ console.error('Error fetching Pokémon data:', error);
 
  
 }
+
+const lastPokemon = localStorage.getItem('lastPokemon');
+if (lastPokemon) {
+    input.value = lastPokemon;
+    fetchPokemon();
+}
+
+
 
 
 button.addEventListener('click', fetchPokemon);
